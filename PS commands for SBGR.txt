@@ -1,0 +1,6 @@
+Powershell Commands for SBGR
+Get-Content FY22_SC.csv | foreach {($_-split "\^").Count} | Out-File count_SC.txt   #counts the number of appearance of "^" on each line
+
+Get-Content FY22_SC.csv | Where-Object {($_ -split "\^").Count -eq 450} | Out-File P1_FY22_SC.csv  #All the lines that have the right number of delimiters
+
+Get-Content FY21_02222022_SC_FINAL.csv | Where-Object {($_ -split "\^").Count -gt 450} | Out-File P2_FY21_SC.csv
